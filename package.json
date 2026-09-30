@@ -1,0 +1,34 @@
+{
+  "name": "zotero-translation",
+  "type": "module",
+  "version": "0.1.1",
+  "description": "Zotero plugin that submits PDFs for bilingual translation via a local HTTP service",
+  "config": {
+    "addonName": "Zotero Translation",
+    "addonID": "zotero-translation@local",
+    "addonRef": "zoterotranslation",
+    "addonInstance": "ZoteroTranslation",
+    "prefsPrefix": "extensions.zotero.zoterotranslation"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/local/zotero-translation.git"
+  },
+  "author": "local",
+  "license": "MIT",
+  "scripts": {
+    "start": "zotero-plugin serve",
+    "build": "zotero-plugin build",
+    "mock-server": "node mock-server/server.mjs",
+    "release": "zotero-plugin release"
+  },
+  "dependencies": {
+    "zotero-plugin-toolkit": "^5.1.0-beta.13"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3",
+    "zotero-plugin-scaffold": "^0.8.2",
+    "zotero-types": "^4.1.0-beta.4"
+  }
+}

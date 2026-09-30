@@ -1,0 +1,60 @@
+<linkset>
+  <html:link rel="localization" href="zoterotranslation-preferences.ftl" />
+</linkset>
+<vbox
+  id="zotero-translation-prefs"
+  onload="Zotero.ZoteroTranslation?.prefsUi?.init(document)"
+>
+  <groupbox>
+    <label>
+      <html:h2 data-l10n-id="pref-heading" />
+    </label>
+    <hbox align="center">
+      <html:label for="zotero-translation-base-url" data-l10n-id="pref-base-url" />
+      <html:input
+        type="text"
+        id="zotero-translation-base-url"
+        preference="extensions.zotero.zoterotranslation.baseUrl"
+        flex="1"
+      />
+    </hbox>
+    <hbox align="center">
+      <html:label for="zotero-translation-token" data-l10n-id="pref-token" />
+      <html:input
+        type="password"
+        id="zotero-translation-token"
+        preference="extensions.zotero.zoterotranslation.token"
+        flex="1"
+      />
+    </hbox>
+    <hbox align="center">
+      <html:label
+        for="zotero-translation-interval"
+        data-l10n-id="pref-scan-interval"
+      />
+      <html:input
+        type="number"
+        id="zotero-translation-interval"
+        preference="extensions.zotero.zoterotranslation.scanIntervalSeconds"
+        min="10"
+        max="3600"
+      />
+    </hbox>
+    <hbox>
+      <button
+        id="zotero-translation-test"
+        data-l10n-id="pref-test-connection"
+        oncommand="Zotero.ZoteroTranslation?.prefsUi?.testConnection()"
+      />
+      <button
+        id="zotero-translation-scan-now"
+        data-l10n-id="pref-scan-now"
+        oncommand="Zotero.ZoteroTranslation?.prefsUi?.scanNow()"
+      />
+    </hbox>
+    <html:pre
+      id="zotero-translation-last-result"
+      style="white-space: pre-wrap; max-height: 12em; overflow: auto;"
+    />
+  </groupbox>
+</vbox>
